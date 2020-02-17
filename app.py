@@ -29,8 +29,8 @@ def validate(params):
             print("TOKEN is not right!")
         if not team:
             print("TEAM_ID is not right!")
-        #if not channel:
-        #    print("USLACKBOT channel is not right!")
+        if not channel:
+            print("USLACKBOT channel is not right!")
         print("\n\n\n")
         return False
 
