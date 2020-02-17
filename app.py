@@ -15,7 +15,7 @@ def validate(params):
     app_id = params["api_app_id"] == os.environ["APP_ID"]
     token = params["token"] == os.environ["VERIFICATION_TOKEN"]
     team = params["team_id"] == os.environ["TEAM_ID"]
-    channel = params["event"]["channel"] == os.environ["BR_CHANNEL"]
+    #channel = params["event"]["channel"] == os.environ["BR_CHANNEL"]
     #channel = params["event"]["channel"] == os.environ["USLACKBOT_CHANNEL"]
     user = params["event"].get("user", "") == "USLACKBOT"
     subtype = params["event"]["subtype"] = "file_share"
@@ -29,8 +29,8 @@ def validate(params):
             print("TOKEN is not right!")
         if not team:
             print("TEAM_ID is not right!")
-        if not channel:
-            print("USLACKBOT channel is not right!")
+        #if not channel:
+        #    print("USLACKBOT channel is not right!")
         print("\n\n\n")
         return False
 
