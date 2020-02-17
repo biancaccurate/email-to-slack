@@ -114,14 +114,29 @@ def main():
                 })
 
             channel = params["event"]["channel"] 
-            if channel == os.environ["BR_CHANNEL"]:
-                INCOMING_WEBHOOK_URL = os.environ["BR_WEBHOOK"]
-            elif channel == os.environ["TX_CHANNEL"]:
-                INCOMING_WEBHOOK_URL = os.environ["PHX_WEBHOOK"]
-            elif channel == os.environ["CHANNEL_UT"]:
+            
+            if channel == os.environ["CHANNEL_AZ"]: #AZ not phoenix
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_AZ"]
+            elif channel == os.environ["CHANNEL_CO"]: # Colorado
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_CO"]
+            elif channel == os.environ["CHANNEL_NORCAL"]: # Nothern California
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_NORCAL"]
+            elif channel == os.environ["CHANNEL_NV"]: #Nevada
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_NV"]
+            elif channel == os.environ["CHANNEL_OP"]: #Operator
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_OP"] 
+            elif channel == os.environ["CHANNEL_PHX"]: #Phoenix
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_PHX"]
+            elif channel == os.environ["CHANNEL_PNW"]: #Pacific North West
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_PNW"]
+            elif channel == os.environ["CHANNEL_SOCAL"]: #Phoenix
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_SOCAL"]
+            elif channel == os.environ["CHANNEL_TX"]: #Texas
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_TX"]
+            elif channel == os.environ["CHANNEL_UT"]: #Utah
                 INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_UT"]
-            else:
-                INCOMING_WEBHOOK_URL = os.environ["INCOMING_WEBHOOK_URL"]
+            else: #Go to Operator
+                INCOMING_WEBHOOK_URL = os.environ["WEBHOOK_OP"]
             
             headers = {
                 "Content-type": "application/json"
