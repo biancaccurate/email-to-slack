@@ -115,8 +115,8 @@ def main():
 
             
                 
-            #INCOMING_WEBHOOK_URL = os.environ["BR_WEBHOOK"]
-            INCOMING_WEBHOOK_URL = os.environ["INCOMING_WEBHOOK_URL"]
+            INCOMING_WEBHOOK_URL = os.environ["BR_WEBHOOK"]
+            #INCOMING_WEBHOOK_URL = os.environ["INCOMING_WEBHOOK_URL"]
             
             headers = {
                 "Content-type": "application/json"
