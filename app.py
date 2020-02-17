@@ -116,6 +116,8 @@ def main():
             channel = params["event"]["channel"] 
             if channel == os.environ["BR_CHANNEL"]:
                 INCOMING_WEBHOOK_URL = os.environ["BR_WEBHOOK"]
+            elif channel == os.environ["PHX_CHANNEL"]:
+                INCOMING_WEBHOOK_URL = os.environ["PHX_WEBHOOK"]
             else:
                 INCOMING_WEBHOOK_URL = os.environ["INCOMING_WEBHOOK_URL"]
             
